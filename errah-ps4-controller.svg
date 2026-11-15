@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+<defs>
+ <linearGradient id="shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#09090c"/><stop offset=".45" stop-color="#242329"/><stop offset="1" stop-color="#050507"/></linearGradient>
+ <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff3158"/><stop offset=".55" stop-color="#a00022"/><stop offset="1" stop-color="#ff003c"/></linearGradient>
+ <pattern id="grain" width="34" height="29" patternUnits="userSpaceOnUse"><path d="M1 4l9-3m8 15 12-5M4 26l7-4" stroke="#fff" stroke-opacity=".12" stroke-width="2"/><path d="M17 2l-4 7m17 14-8 4" stroke="#ff1748" stroke-opacity=".3" stroke-width="2"/></pattern>
+ <pattern id="brand" width="125" height="42" patternUnits="userSpaceOnUse"><text x="0" y="30" font-family="Arial,sans-serif" font-size="29" font-weight="900" font-style="italic" fill="#ed123d" fill-opacity=".6">ERRAH</text></pattern>
+ <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<!-- DS4 shell silhouette with transparent apertures for live controls -->
+<path fill="url(#shell)" stroke="#ff1748" stroke-width="5" filter="url(#glow)" fill-rule="evenodd" d="M155 80 Q180 45 260 48 L640 48 Q720 45 745 80 L850 210 Q875 245 865 310 L820 510 Q805 565 745 555 L660 540 Q620 530 600 475 L555 420 L345 420 L300 475 Q280 530 240 540 L155 555 Q95 565 80 510 L35 310 Q25 245 50 210 Z
+ M105 205a83 83 0 1 0 166 0a83 83 0 1 0 -166 0
+ M629 205a83 83 0 1 0 166 0a83 83 0 1 0 -166 0
+ M285 370a70 70 0 1 0 140 0a70 70 0 1 0 -140 0
+ M475 370a70 70 0 1 0 140 0a70 70 0 1 0 -140 0
+ M365 70h170q18 0 18 18v100q0 18-18 18H365q-18 0-18-18V88q0-18 18-18
+ M420 300a30 30 0 1 0 60 0a30 30 0 1 0 -60 0"/>
+<path d="M155 80 Q180 45 260 48 L640 48 Q720 45 745 80 L850 210 Q875 245 865 310 L820 510 Q805 565 745 555 L660 540 Q620 530 600 475 L555 420 L345 420 L300 475 Q280 530 240 540 L155 555 Q95 565 80 510 L35 310 Q25 245 50 210 Z" fill="url(#grain)" opacity=".9"/>
+<!-- distressed brand panels -->
+<path d="M45 255 Q95 125 230 120 L285 175 L260 490 Q190 545 95 510Z" fill="url(#brand)" opacity=".9"/>
+<path d="M665 115 L770 115 Q835 180 850 270 L810 490 L730 530 L680 450Z" fill="url(#red)" opacity=".18"/>
+<path d="M690 145 L790 480 M735 130 L835 410" stroke="#fff" stroke-width="24" opacity=".85"/>
+<path d="M690 145 L790 480 M735 130 L835 410" stroke="#ff1748" stroke-width="5" opacity=".75"/>
+<path d="M335 58H565" stroke="#ff1748" stroke-width="5"/>
+<text x="450" y="145" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-size="52" font-style="italic" font-weight="bold">ERRAH</text>
+<path d="M360 160 Q450 180 540 155" fill="none" stroke="#ff1748" stroke-width="7"/>
+<path d="M55 245L120 300M845 245L780 300" stroke="#fff" stroke-width="10" opacity=".35"/>
+</svg>
