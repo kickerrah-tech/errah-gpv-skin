@@ -1,11 +1,20 @@
-/* ERRAH PS4 / DualShock 4 — GamePad Viewer edit skin
-   Select the PlayStation 4 / DualShock 4 built-in skin.
-   This stylesheet recolours the live GPV skin; it does not replace its artwork.
+/* ERRAH PS4 / DualShock 4 — custom live GamePad Viewer skin
+   The controller body is replaced with the ERRAH shell artwork.
+   Default button, D-pad, trigger and stick elements remain live.
 */
-.edit {
-  filter: saturate(1.25) contrast(1.12)
+.edit .controller.ds4,
+.controller.edit {
+  background: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/errah-ps4-controller.svg") center center / 100% 100% no-repeat !important;
+  filter: saturate(1.18) contrast(1.08)
     drop-shadow(0 0 3px rgba(255, 0, 48, .9))
-    drop-shadow(0 0 10px rgba(255, 0, 48, .38));
+    drop-shadow(0 0 9px rgba(255, 0, 48, .35));
+}
+.edit .button,
+.edit .trigger,
+.edit .bumper,
+.edit .stick,
+.edit .face {
+  transition: filter .06s ease, background-color .06s ease;
 }
 .edit .button.pressed,
 .edit .trigger.pressed,
@@ -16,14 +25,6 @@
   filter: brightness(1.65) saturate(1.5)
     drop-shadow(0 0 5px #ff003c)
     drop-shadow(0 0 12px rgba(255, 0, 60, .9));
-}
-.edit .button,
-.edit .trigger,
-.edit .bumper,
-.edit .stick,
-.edit .dpad,
-.edit .face {
-  transition: filter .06s ease, background-color .06s ease;
 }
 .edit .button.pressed,
 .edit .face.pressed {
