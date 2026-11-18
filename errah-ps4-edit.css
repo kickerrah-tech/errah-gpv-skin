@@ -1,111 +1,108 @@
-/* ERRAH DualShock 4 — calibrated to the supplied 1536x1024 shell.
-   GamePad Viewer DS4's native coordinate system is 806x598.
-   IMPORTANT: keep that native canvas size; changing it breaks every child layer.
+/* ERRAH PS4 shell — GamePadViewer custom-skin selectors.
+   Uses the native 806 x 598 DS4 canvas. Child positions follow the
+   same .custom controller structure used by established GPV PS4 skins.
 */
-.controller.ds4.edit,
-.controller.ds4 {
+.custom.controller,
+.custom.controller.ds4,
+.controller.ds4.custom {
+  position: relative !important;
   width: 806px !important;
   height: 598px !important;
-  box-sizing: border-box !important;
-  background: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") center center / 100% 100% no-repeat !important;
-  filter: saturate(1.08) contrast(1.04)
-    drop-shadow(0 0 3px rgba(255, 0, 48, .75));
+  background-image: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  filter: saturate(1.06) contrast(1.03) drop-shadow(0 0 3px rgba(255,0,48,.7));
 }
 
-/* D-pad: center on the printed four-way cross. */
-.ds4.edit .dpad {
+/* D-pad — center of the printed cross. */
+.custom .dpad {
   position: absolute !important;
-  width: 125px !important;
+  left: 117px !important;
+  top: 108px !important;
+  width: 126px !important;
   height: 126px !important;
-  left: 118px !important;
-  top: 129px !important;
 }
-.ds4.edit .face {
+.custom .face {
   position: absolute !important;
   opacity: 0 !important;
-  background: rgba(255, 0, 55, .42) !important;
+  background: rgba(255,0,55,.5) !important;
   transition: opacity .06s ease, filter .06s ease;
 }
-.ds4.edit .face.up,
-.ds4.edit .face.down {
-  width: 36px !important;
-  height: 52px !important;
-  left: 44px !important;
+.custom .face.up, .custom .face.down {
+  width: 36px !important; height: 52px !important; left: 45px !important;
 }
-.ds4.edit .face.up { top: 0 !important; }
-.ds4.edit .face.down { bottom: 0 !important; }
-.ds4.edit .face.left,
-.ds4.edit .face.right {
-  width: 52px !important;
-  height: 36px !important;
-  top: 45px !important;
+.custom .face.up { top: 0 !important; }
+.custom .face.down { bottom: 0 !important; }
+.custom .face.left, .custom .face.right {
+  width: 52px !important; height: 36px !important; top: 45px !important;
 }
-.ds4.edit .face.left { left: 0 !important; }
-.ds4.edit .face.right { right: 0 !important; }
-.ds4.edit .face.pressed {
-  opacity: .9 !important;
+.custom .face.left { left: 0 !important; }
+.custom .face.right { right: 0 !important; }
+.custom .face.pressed {
+  opacity: .92 !important;
   outline: 2px solid #ff1748 !important;
   border-radius: 8px !important;
   filter: drop-shadow(0 0 7px #ff1748);
 }
 
-/* Face buttons: triangle, square, circle and cross line up with printed icons. */
-.ds4.edit .abxy {
+/* Face buttons — centers correspond to triangle, square, circle, cross. */
+.custom .abxy {
   position: absolute !important;
+  left: 587px !important;
+  top: 104px !important;
   width: 170px !important;
-  height: 171px !important;
-  left: 558px !important;
-  top: 98px !important;
+  height: 170px !important;
 }
-.ds4.edit .button {
+.custom .button {
   position: absolute !important;
   width: 55px !important;
   height: 55px !important;
   border: 0 !important;
   border-radius: 50% !important;
-  background-color: rgba(255, 0, 55, .0) !important;
+  background: transparent !important;
   opacity: 0 !important;
   transition: opacity .06s ease, filter .06s ease;
 }
-.ds4.edit .a { left: 58px !important; bottom: 0 !important; }
-.ds4.edit .b { top: 58px !important; right: 0 !important; }
-.ds4.edit .x { top: 58px !important; left: 0 !important; }
-.ds4.edit .y { left: 58px !important; top: 0 !important; }
-.ds4.edit .button.pressed {
-  opacity: .92 !important;
-  background-color: rgba(255, 0, 55, .48) !important;
-  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255, 0, 55, .95) !important;
-  filter: brightness(1.35);
+.custom .a { left: 58px !important; bottom: 0 !important; }
+.custom .b { right: 0 !important; top: 58px !important; }
+.custom .x { left: 0 !important; top: 58px !important; }
+.custom .y { left: 58px !important; top: 0 !important; }
+.custom .button.pressed {
+  opacity: .9 !important;
+  background: rgba(255,0,55,.5) !important;
+  box-shadow: inset 0 0 0 3px #ff1748, 0 0 11px rgba(255,0,55,.9) !important;
 }
 
-/* Analog sticks: each live indicator sits inside its printed stick ring. */
-.ds4.edit .sticks {
+/* Sticks — live movement areas centered over the two printed thumb caps. */
+.custom .sticks {
   position: absolute !important;
-  width: 343px !important;
-  height: 105px !important;
-  left: 245px !important;
-  top: 296px !important;
+  left: 230px !important;
+  top: 273px !important;
+  width: 326px !important;
+  height: 94px !important;
 }
-.ds4.edit .stick {
+.custom .stick {
   position: absolute !important;
   width: 94px !important;
   height: 94px !important;
-  background-color: rgba(255, 0, 55, .10) !important;
   border-radius: 50% !important;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.18) !important;
+  background: rgba(255,0,55,.08) !important;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.16) !important;
 }
-.ds4.edit .stick.left { left: 0 !important; top: 0 !important; }
-.ds4.edit .stick.right { left: calc(100% - 105px) !important; top: 0 !important; }
-.ds4.edit .stick.pressed {
-  background-color: rgba(255, 0, 55, .32) !important;
-  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.8) !important;
+.custom .stick.left { left: 0 !important; top: 0 !important; }
+.custom .stick.right { right: 0 !important; top: 0 !important; }
+.custom .stick.pressed {
+  background: rgba(255,0,55,.3) !important;
+  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.85) !important;
 }
 
-/* Share/options are native DS4 positions; only show their red pressed state. */
-.ds4.edit .back,
-.ds4.edit .start { opacity: 0 !important; }
-.ds4.edit .back.pressed,
-.ds4.edit .start.pressed {
-  opacity: .95 !important;
+/* Share, options and PS/meta buttons retain their live hit regions. */
+.custom .arrows { position: absolute !important; }
+.custom .back, .custom .start { opacity: 0 !important; }
+.custom .back.pressed, .custom .start.pressed {
+  opacity: .9 !important;
   filter: drop-shadow(0 0 7px #ff1748);
 }
+.custom .meta { opacity: 0 !important; }
+.custom .meta.pressed { opacity: .9 !important; filter: drop-shadow(0 0 8px #ff1748); }
