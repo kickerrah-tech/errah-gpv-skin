@@ -1,60 +1,64 @@
-/* ERRAH PS4 shell — GamePadViewer custom-skin selectors.
-   Uses the native 806 x 598 DS4 canvas. Child positions follow the
-   same .custom controller structure used by established GPV PS4 skins.
+/* ERRAH DualShock 4 skin — correct GamePad Viewer EDIT selectors.
+   editcss applies the .edit class to the controller; it does NOT add .custom.
+   Canvas: 806x598. Positions measured against the supplied ERRAH shell artwork.
 */
-.custom.controller,
-.custom.controller.ds4,
-.controller.ds4.custom {
+.controller.edit,
+.controller.ds4.edit {
   position: relative !important;
   width: 806px !important;
   height: 598px !important;
   background-image: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") !important;
   background-repeat: no-repeat !important;
-  background-position: center top !important;
-  background-size: 100% auto !important;
-  filter: saturate(1.06) contrast(1.03) drop-shadow(0 0 3px rgba(255,0,48,.7));
+  background-position: 0 0 !important;
+  background-size: 100% 100% !important;
+  filter: saturate(1.04) contrast(1.02) drop-shadow(0 0 3px rgba(255,0,48,.55));
 }
 
-/* D-pad — center of the printed cross. */
-.custom .dpad {
+/* D-pad: cross centre at approx. (177,206). */
+.edit .dpad {
   position: absolute !important;
-  left: 117px !important;
-  top: 108px !important;
+  left: 114px !important;
+  top: 143px !important;
   width: 126px !important;
   height: 126px !important;
 }
-.custom .face {
+.edit .face {
   position: absolute !important;
+  background: transparent !important;
   opacity: 0 !important;
-  background: rgba(255,0,55,.5) !important;
-  transition: opacity .06s ease, filter .06s ease;
+  transition: opacity .07s ease, background .07s ease;
 }
-.custom .face.up, .custom .face.down {
-  width: 36px !important; height: 52px !important; left: 45px !important;
+.edit .face.up, .edit .face.down {
+  width: 36px !important;
+  height: 52px !important;
+  left: 45px !important;
 }
-.custom .face.up { top: 0 !important; }
-.custom .face.down { bottom: 0 !important; }
-.custom .face.left, .custom .face.right {
-  width: 52px !important; height: 36px !important; top: 45px !important;
+.edit .face.up { top: 0 !important; }
+.edit .face.down { bottom: 0 !important; }
+.edit .face.left, .edit .face.right {
+  width: 52px !important;
+  height: 36px !important;
+  top: 45px !important;
 }
-.custom .face.left { left: 0 !important; }
-.custom .face.right { right: 0 !important; }
-.custom .face.pressed {
-  opacity: .92 !important;
-  outline: 2px solid #ff1748 !important;
-  border-radius: 8px !important;
-  filter: drop-shadow(0 0 7px #ff1748);
+.edit .face.left { left: 0 !important; }
+.edit .face.right { right: 0 !important; }
+.edit .face.pressed {
+  opacity: 1 !important;
+  background: rgba(255, 0, 55, .58) !important;
+  border: 2px solid #ff1748 !important;
+  border-radius: 9px !important;
+  box-shadow: 0 0 9px rgba(255,0,55,.85) !important;
 }
 
-/* Face buttons — centers correspond to triangle, square, circle, cross. */
-.custom .abxy {
+/* Triangle / square / circle / cross: centres aligned to printed symbols. */
+.edit .abxy {
   position: absolute !important;
-  left: 587px !important;
-  top: 104px !important;
+  left: 553px !important;
+  top: 118px !important;
   width: 170px !important;
-  height: 170px !important;
+  height: 171px !important;
 }
-.custom .button {
+.edit .button {
   position: absolute !important;
   width: 55px !important;
   height: 55px !important;
@@ -62,47 +66,44 @@
   border-radius: 50% !important;
   background: transparent !important;
   opacity: 0 !important;
-  transition: opacity .06s ease, filter .06s ease;
+  transition: opacity .07s ease, box-shadow .07s ease;
 }
-.custom .a { left: 58px !important; bottom: 0 !important; }
-.custom .b { right: 0 !important; top: 58px !important; }
-.custom .x { left: 0 !important; top: 58px !important; }
-.custom .y { left: 58px !important; top: 0 !important; }
-.custom .button.pressed {
-  opacity: .9 !important;
-  background: rgba(255,0,55,.5) !important;
-  box-shadow: inset 0 0 0 3px #ff1748, 0 0 11px rgba(255,0,55,.9) !important;
+.edit .a { left: 58px !important; bottom: 0 !important; }
+.edit .b { right: 0 !important; top: 58px !important; }
+.edit .x { left: 0 !important; top: 58px !important; }
+.edit .y { left: 58px !important; top: 0 !important; }
+.edit .button.pressed {
+  opacity: 1 !important;
+  background: rgba(255,0,55,.46) !important;
+  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.9) !important;
 }
 
-/* Sticks — live movement areas centered over the two printed thumb caps. */
-.custom .sticks {
+/* Analogue indicators: thumb-cap centres approx. (300,351) and (526,351). */
+.edit .sticks {
   position: absolute !important;
-  left: 230px !important;
-  top: 273px !important;
-  width: 326px !important;
+  left: 253px !important;
+  top: 304px !important;
+  width: 320px !important;
   height: 94px !important;
 }
-.custom .stick {
+.edit .stick {
   position: absolute !important;
   width: 94px !important;
   height: 94px !important;
+  border: 0 !important;
   border-radius: 50% !important;
-  background: rgba(255,0,55,.08) !important;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.16) !important;
+  background: radial-gradient(circle, rgba(255,0,55,.78) 0 23%, rgba(255,0,55,.18) 25% 34%, transparent 36%) center / 100% 100% no-repeat !important;
+  box-shadow: none !important;
 }
-.custom .stick.left { left: 0 !important; top: 0 !important; }
-.custom .stick.right { right: 0 !important; top: 0 !important; }
-.custom .stick.pressed {
-  background: rgba(255,0,55,.3) !important;
-  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.85) !important;
+.edit .stick.left { left: 0 !important; top: 0 !important; }
+.edit .stick.right { left: 226px !important; top: 0 !important; }
+.edit .stick.pressed {
+  filter: drop-shadow(0 0 8px rgba(255,0,55,.95));
 }
 
-/* Share, options and PS/meta buttons retain their live hit regions. */
-.custom .arrows { position: absolute !important; }
-.custom .back, .custom .start { opacity: 0 !important; }
-.custom .back.pressed, .custom .start.pressed {
-  opacity: .9 !important;
-  filter: drop-shadow(0 0 7px #ff1748);
+/* Keep other live controls available but visually quiet at rest. */
+.edit .back, .edit .start, .edit .meta { opacity: 0 !important; }
+.edit .back.pressed, .edit .start.pressed, .edit .meta.pressed {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px #ff1748);
 }
-.custom .meta { opacity: 0 !important; }
-.custom .meta.pressed { opacity: .9 !important; filter: drop-shadow(0 0 8px #ff1748); }
