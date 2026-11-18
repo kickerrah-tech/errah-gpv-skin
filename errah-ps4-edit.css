@@ -1,32 +1,115 @@
-/* ERRAH PS4 / DualShock 4 — custom live GamePad Viewer skin
-   The controller body is replaced with the ERRAH shell artwork.
-   Default button, D-pad, trigger and stick elements remain live.
+/* ERRAH DualShock 4 overlay — aligned to the supplied 1536x1024 shell.
+   The viewer's controller canvas is set to the same 1.5 aspect ratio.
+   All live input elements are transparent at rest so the artwork remains visible;
+   pressed inputs light up in ERRAH red.
 */
-.edit .controller.ds4,
-.controller.edit {
+.controller.ds4.edit,
+.controller.ds4 {
+  width: 897px !important;
+  height: 598px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
   background: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") center center / 100% 100% no-repeat !important;
-  filter: saturate(1.18) contrast(1.08)
-    drop-shadow(0 0 3px rgba(255, 0, 48, .9))
-    drop-shadow(0 0 9px rgba(255, 0, 48, .35));
+  filter: saturate(1.08) contrast(1.04)
+    drop-shadow(0 0 3px rgba(255, 0, 48, .75));
 }
-.edit .button,
-.edit .trigger,
-.edit .bumper,
-.edit .stick,
-.edit .face {
-  transition: filter .06s ease, background-color .06s ease;
+
+/* D-pad: centered over the four printed arrow caps. */
+.controller.ds4.edit .dpad {
+  position: absolute !important;
+  left: 115px !important;
+  top: 126px !important;
+  width: 165px !important;
+  height: 152px !important;
 }
-.edit .button.pressed,
-.edit .trigger.pressed,
-.edit .bumper.pressed,
-.edit .stick.pressed,
-.edit .dpad.pressed,
-.edit .face.pressed {
-  filter: brightness(1.65) saturate(1.5)
-    drop-shadow(0 0 5px #ff003c)
-    drop-shadow(0 0 12px rgba(255, 0, 60, .9));
+.controller.ds4.edit .face {
+  position: absolute !important;
+  background: none !important;
+  opacity: 0 !important;
+  transition: opacity .06s ease, filter .06s ease;
 }
-.edit .button.pressed,
-.edit .face.pressed {
-  background-color: #ff003c !important;
+.controller.ds4.edit .face.up,
+.controller.ds4.edit .face.down {
+  width: 62px !important;
+  height: 70px !important;
+}
+.controller.ds4.edit .face.left,
+.controller.ds4.edit .face.right {
+  width: 70px !important;
+  height: 58px !important;
+}
+.controller.ds4.edit .face.up { left: 51px !important; top: 0 !important; }
+.controller.ds4.edit .face.down { left: 51px !important; bottom: 0 !important; }
+.controller.ds4.edit .face.left { left: 0 !important; top: 47px !important; }
+.controller.ds4.edit .face.right { right: 0 !important; top: 47px !important; }
+.controller.ds4.edit .face.pressed {
+  opacity: .95 !important;
+  background: rgba(255, 0, 55, .55) !important;
+  border: 2px solid #ff1748 !important;
+  border-radius: 12px !important;
+  filter: drop-shadow(0 0 7px #ff1748);
+}
+
+/* Four PlayStation face buttons. */
+.controller.ds4.edit .abxy {
+  position: absolute !important;
+  left: 610px !important;
+  top: 107px !important;
+  width: 205px !important;
+  height: 194px !important;
+}
+.controller.ds4.edit .button {
+  position: absolute !important;
+  width: 58px !important;
+  height: 58px !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  opacity: 0 !important;
+  transition: opacity .06s ease, filter .06s ease;
+}
+.controller.ds4.edit .a { left: 99px !important; bottom: 0 !important; }
+.controller.ds4.edit .b { right: 0 !important; top: 71px !important; }
+.controller.ds4.edit .x { left: 38px !important; top: 71px !important; }
+.controller.ds4.edit .y { left: 99px !important; top: 0 !important; }
+.controller.ds4.edit .button.pressed {
+  opacity: .9 !important;
+  background: rgba(255, 0, 55, .45) !important;
+  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255, 0, 55, .95) !important;
+  filter: brightness(1.35);
+}
+
+/* Analog stick indicators: positioned over the printed stick caps. */
+.controller.ds4.edit .sticks {
+  position: absolute !important;
+  left: 265px !important;
+  top: 274px !important;
+  width: 367px !important;
+  height: 94px !important;
+}
+.controller.ds4.edit .stick {
+  position: absolute !important;
+  width: 94px !important;
+  height: 94px !important;
+  background: rgba(8, 8, 10, .18) !important;
+  border: 2px solid rgba(255, 255, 255, .28) !important;
+  border-radius: 50% !important;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.35) !important;
+}
+.controller.ds4.edit .stick.left { left: 0 !important; top: 0 !important; }
+.controller.ds4.edit .stick.right { left: calc(100% - 94px) !important; top: 0 !important; }
+.controller.ds4.edit .stick.pressed {
+  border-color: rgba(255, 23, 72, .95) !important;
+  box-shadow: inset 0 0 12px rgba(255, 0, 55, .35), 0 0 10px rgba(255,0,55,.8) !important;
+}
+
+/* Share/options and system controls stay transparent unless pressed. */
+.controller.ds4.edit .back,
+.controller.ds4.edit .start {
+  opacity: 0 !important;
+}
+.controller.ds4.edit .back.pressed,
+.controller.ds4.edit .start.pressed {
+  opacity: .9 !important;
+  filter: drop-shadow(0 0 7px #ff1748);
 }
