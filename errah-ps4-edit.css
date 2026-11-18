@@ -1,9 +1,9 @@
 /* ERRAH DualShock 4 skin — correct GamePad Viewer EDIT selectors.
-   editcss applies the .edit class to the controller; it does NOT add .custom.
+   editcss applies the .controller.edit class to the controller; it does NOT add .custom.
    Canvas: 806x598. Positions measured against the supplied ERRAH shell artwork.
 */
 .controller.edit,
-.controller.ds4.edit {
+.controller.ds4.controller.edit {
   position: relative !important;
   width: 806px !important;
   height: 598px !important;
@@ -15,34 +15,34 @@
 }
 
 /* D-pad: cross centre at approx. (177,206). */
-.edit .dpad {
+.controller.edit .dpad {
   position: absolute !important;
   left: 114px !important;
   top: 143px !important;
   width: 126px !important;
   height: 126px !important;
 }
-.edit .face {
+.controller.edit .face {
   position: absolute !important;
   background: transparent !important;
   opacity: 0 !important;
   transition: opacity .07s ease, background .07s ease;
 }
-.edit .face.up, .edit .face.down {
+.controller.edit .face.up, .controller.edit .face.down {
   width: 36px !important;
   height: 52px !important;
   left: 45px !important;
 }
-.edit .face.up { top: 0 !important; }
-.edit .face.down { bottom: 0 !important; }
-.edit .face.left, .edit .face.right {
+.controller.edit .face.up { top: 0 !important; }
+.controller.edit .face.down { bottom: 0 !important; }
+.controller.edit .face.left, .controller.edit .face.right {
   width: 52px !important;
   height: 36px !important;
   top: 45px !important;
 }
-.edit .face.left { left: 0 !important; }
-.edit .face.right { right: 0 !important; }
-.edit .face.pressed {
+.controller.edit .face.left { left: 0 !important; }
+.controller.edit .face.right { right: 0 !important; }
+.controller.edit .face.pressed {
   opacity: 1 !important;
   background: rgba(255, 0, 55, .58) !important;
   border: 2px solid #ff1748 !important;
@@ -51,14 +51,14 @@
 }
 
 /* Triangle / square / circle / cross: centres aligned to printed symbols. */
-.edit .abxy {
+.controller.edit .abxy {
   position: absolute !important;
   left: 553px !important;
   top: 118px !important;
   width: 170px !important;
   height: 171px !important;
 }
-.edit .button {
+.controller.edit .button {
   position: absolute !important;
   width: 55px !important;
   height: 55px !important;
@@ -68,25 +68,25 @@
   opacity: 0 !important;
   transition: opacity .07s ease, box-shadow .07s ease;
 }
-.edit .a { left: 58px !important; bottom: 0 !important; }
-.edit .b { right: 0 !important; top: 58px !important; }
-.edit .x { left: 0 !important; top: 58px !important; }
-.edit .y { left: 58px !important; top: 0 !important; }
-.edit .button.pressed {
+.controller.edit .a { left: 58px !important; bottom: 0 !important; }
+.controller.edit .b { right: 0 !important; top: 58px !important; }
+.controller.edit .x { left: 0 !important; top: 58px !important; }
+.controller.edit .y { left: 58px !important; top: 0 !important; }
+.controller.edit .button.pressed {
   opacity: 1 !important;
   background: rgba(255,0,55,.46) !important;
   box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.9) !important;
 }
 
 /* Analogue indicators: thumb-cap centres approx. (300,351) and (526,351). */
-.edit .sticks {
+.controller.edit .sticks {
   position: absolute !important;
   left: 253px !important;
   top: 304px !important;
   width: 320px !important;
   height: 94px !important;
 }
-.edit .stick {
+.controller.edit .stick {
   position: absolute !important;
   width: 94px !important;
   height: 94px !important;
@@ -95,15 +95,15 @@
   background: radial-gradient(circle, rgba(255,0,55,.78) 0 23%, rgba(255,0,55,.18) 25% 34%, transparent 36%) center / 100% 100% no-repeat !important;
   box-shadow: none !important;
 }
-.edit .stick.left { left: 0 !important; top: 0 !important; }
-.edit .stick.right { left: 226px !important; top: 0 !important; }
-.edit .stick.pressed {
+.controller.edit .stick.left { left: 0 !important; top: 0 !important; }
+.controller.edit .stick.right { left: 226px !important; top: 0 !important; }
+.controller.edit .stick.pressed {
   filter: drop-shadow(0 0 8px rgba(255,0,55,.95));
 }
 
 /* Keep other live controls available but visually quiet at rest. */
-.edit .back, .edit .start, .edit .meta { opacity: 0 !important; }
-.edit .back.pressed, .edit .start.pressed, .edit .meta.pressed {
+.controller.edit .back, .controller.edit .start, .controller.edit .meta { opacity: 0 !important; }
+.controller.edit .back.pressed, .controller.edit .start.pressed, .controller.edit .meta.pressed {
   opacity: 1 !important;
   filter: drop-shadow(0 0 8px #ff1748);
 }
