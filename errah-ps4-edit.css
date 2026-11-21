@@ -1,115 +1,54 @@
-/* ERRAH DS4 shell — viewport/crop repair.
-   GamePad Viewer compact mode applies .ds4.half with a negative top margin.
-   Cancel that offset so the full shell artwork is visible.
+/* ERRAH DualShock 4 — clean full-shell crop correction.
+   The stock GamePad Viewer PS4 stylesheet applies:
+   .ds4.half { margin-top: -300px; }
+   Reset ONLY that offset. Do not reposition the controller with top/transform.
 */
-.controller.edit,
-.controller.ds4.edit,
-.edit .controller.ds4 {
-  position: relative !important;
-  width: 806px !important;
-  height: 598px !important;
-  min-width: 806px !important;
-  min-height: 598px !important;
-  margin-top: 0 !important;
-  top: 0 !important;
-  background-image: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: contain !important;
-  overflow: visible !important;
-}
-
-/* The stock PS4 stylesheet shifts the compact/half controller upward by
-   about 300px. That is why only the lower part of the custom shell appeared. */
-.ds4.half,
-.controller.ds4.half,
-.controller.edit.ds4.half {
-  margin-top: 0 !important;
-  top: 0 !important;
-}
-
-/* Keep the built-in control graphics invisible; retain their live hit areas. */
-.edit .face,
-.controller.edit .face {
-  background-image: none !important;
-  opacity: 0 !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-.edit .face.pressed,
-.controller.edit .face.pressed {
-  opacity: 1 !important;
-  background: rgba(255, 0, 55, .52) !important;
-  border: 2px solid #ff1748 !important;
-  border-radius: 9px !important;
-  box-shadow: 0 0 9px rgba(255,0,55,.85) !important;
-}
-
-.edit .button,
-.controller.edit .button {
-  background-image: none !important;
-  opacity: 0 !important;
-}
-.edit .button.pressed,
-.controller.edit .button.pressed {
-  opacity: 1 !important;
-  background: rgba(255,0,55,.46) !important;
-  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.9) !important;
-}
-
-.edit .stick,
-.controller.edit .stick {
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-.edit .stick.pressed,
-.controller.edit .stick.pressed {
-  background: radial-gradient(circle, rgba(255,0,55,.72) 0 28%, transparent 31%) !important;
-  filter: drop-shadow(0 0 8px rgba(255,0,55,.9));
-}
-
-.edit .back, .edit .start, .edit .meta,
-.controller.edit .back, .controller.edit .start, .controller.edit .meta {
-  background-image: none !important;
-  opacity: 0 !important;
-}
-.edit .back.pressed, .edit .start.pressed, .edit .meta.pressed,
-.controller.edit .back.pressed, .controller.edit .start.pressed, .controller.edit .meta.pressed {
-  opacity: 1 !important;
-  filter: drop-shadow(0 0 8px #ff1748);
-}
-
-
-/* FINAL COMPACT MODE CROP FIX:
-   GamePad Viewer adds .edit and .half to the same controller element.
-   The compact-mode skin uses a negative margin-top (~315px); reset it here.
-*/
-html body .controller.edit.half,
-html body .controller.ds4.edit.half,
-html body .edit.half,
-html body .controller.half.edit {
+html body .ds4.half,
+html body .controller.ds4.half {
   margin-top: 0 !important;
   margin-block-start: 0 !important;
-  top: 0 !important;
-  transform: none !important;
 }
 
-/* Keep the controller shell's full image canvas visible in compact mode. */
-html body .controller.edit,
-html body .controller.ds4.edit {
+/* ERRAH shell artwork */
+html body .controller.ds4 {
+  width: 806px !important;
+  height: 598px !important;
+  background-image: url("https://raw.githubusercontent.com/kickerrah-tech/errah-gpv-skin/main/d5d148e5-3b4e-45c1-a8f5-dfd08f6e1cb7.png") !important;
+  background-repeat: no-repeat !important;
   background-position: center top !important;
   background-size: 100% 100% !important;
 }
 
-
-/* Compact-mode centering override — this is the selector used by the
-   stock DualShock 4 skin when p=1 enables compact mode. */
-html body .ds4.half,
-html body .controller.ds4.half,
-html body .controller.ds4.edit.half {
-  margin-top: 0 !important;
-  margin-block-start: 0 !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
+/* Keep native controls positioned by the stock DS4 skin.
+   Only suppress their artwork at rest; pressed indicators remain visible. */
+.ds4 .face,
+.ds4 .button {
+  opacity: 0 !important;
+}
+.ds4 .face.pressed {
+  opacity: 1 !important;
+  background: rgba(255,0,55,.55) !important;
+  border: 2px solid #ff1748 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 9px rgba(255,0,55,.85) !important;
+}
+.ds4 .button.pressed {
+  opacity: 1 !important;
+  background: rgba(255,0,55,.45) !important;
+  box-shadow: inset 0 0 0 3px #ff1748, 0 0 12px rgba(255,0,55,.9) !important;
+}
+.ds4 .stick {
+  background-image: none !important;
+  box-shadow: none !important;
+}
+.ds4 .stick.pressed {
+  background: radial-gradient(circle, rgba(255,0,55,.72) 0 28%, transparent 31%) !important;
+  filter: drop-shadow(0 0 8px rgba(255,0,55,.9));
+}
+.ds4 .back, .ds4 .start, .ds4 .meta {
+  opacity: 0 !important;
+}
+.ds4 .back.pressed, .ds4 .start.pressed, .ds4 .meta.pressed {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px #ff1748);
 }
