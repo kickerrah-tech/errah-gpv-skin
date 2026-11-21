@@ -101,3 +101,15 @@ html body .controller.ds4.edit {
   background-position: center top !important;
   background-size: 100% 100% !important;
 }
+
+
+/* Compact-mode centering override — this is the selector used by the
+   stock DualShock 4 skin when p=1 enables compact mode. */
+html body .ds4.half,
+html body .controller.ds4.half,
+html body .controller.ds4.edit.half {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
