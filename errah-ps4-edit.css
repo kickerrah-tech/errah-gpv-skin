@@ -79,3 +79,25 @@
   opacity: 1 !important;
   filter: drop-shadow(0 0 8px #ff1748);
 }
+
+
+/* FINAL COMPACT MODE CROP FIX:
+   GamePad Viewer adds .edit and .half to the same controller element.
+   The compact-mode skin uses a negative margin-top (~315px); reset it here.
+*/
+html body .controller.edit.half,
+html body .controller.ds4.edit.half,
+html body .edit.half,
+html body .controller.half.edit {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+/* Keep the controller shell's full image canvas visible in compact mode. */
+html body .controller.edit,
+html body .controller.ds4.edit {
+  background-position: center top !important;
+  background-size: 100% 100% !important;
+}
